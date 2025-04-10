@@ -1,0 +1,253 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Principal */
+.quiz-header, 
+.quiz-container, 
+.submit-container, 
+.results {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+/* Cabeçalho */
+.quiz-header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.quiz-header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #3498db;
+}
+
+.quiz-header h2 {
+    margin: 10px 0 0 0;
+    font-size: 1.5em;
+    color: #3498db;
+}
+
+/* Container do Quiz */
+.quiz-container {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Questões */
+.question-container {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.question-container:last-child {
+    border-bottom: none;
+}
+
+.question-number {
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.question-text {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Opções */
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.option {
+    padding: 12px;
+    margin: 8px 0;
+    background-color: #333;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.option:hover {
+    background-color: #444;
+}
+
+.option.selected {
+    background-color: #3498db;
+    color: white;
+}
+
+.option.correct {
+    background-color: #27ae60;
+    color: white;
+}
+
+.option.incorrect {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Feedback */
+.feedback {
+    margin: 15px auto 0;
+    padding: 12px;
+    border-radius: 6px;
+    display: none;
+    font-size: 0.9em;
+    max-width: 600px;
+}
+
+.correct-feedback {
+    background-color: #27ae60;
+    color: white;
+}
+
+.incorrect-feedback {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Assuntos */
+.subject-title {
+    color: #f39c12;
+    font-size: 1.3em;
+    margin: 25px 0 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #f39c12;
+    text-align: center;
+}
+
+.subject-title[class*="(ATIVIDADE)"] {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.subject-title[class*="(ATIVIDADE)"]::after {
+    content: " 📝";
+}
+
+/* Botões */
+.submit-container {
+    text-align: center;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    padding: 12px 30px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+
+.back-button {
+    background-color: #555;
+}
+
+.action-button:hover {
+    background-color: #2980b9;
+}
+
+.back-button:hover {
+    background-color: #666;
+}
+
+#submit[disabled] {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* Resultados */
+.results {
+    display: none;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+}
+
+.score {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.percentage {
+    font-size: 2em;
+    color: #27ae60;
+    margin: 10px 0;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .quiz-header, 
+    .quiz-container, 
+    .submit-container, 
+    .results {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .question-container {
+        padding: 10px;
+    }
+    
+    .option {
+        max-width: 100%;
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
